@@ -13,13 +13,13 @@ import {
 import { Skeleton } from "./Skeleton";
 
 export default function RevenueChart() {
-  const { data, loading, error } = useDashboardStore();
+  const { data, loading, error, dateRange } = useDashboardStore();
   if (loading) return <Skeleton className="h-64" />;
   if (error) return <div className="flex h-64 items-center justify-center rounded border border-red-200 bg-red-50 text-red-600">Error loading chart</div>;
   if (!data.revenueMonthly.length) return <div className="flex h-64 items-center justify-center rounded border border-gray-200 bg-white dark:bg-neutral-900">No data</div>;
   return (
     <div className="rounded-lg border border-gray-200 bg-white p-4 dark:bg-neutral-900 dark:border-neutral-800">
-      <div className="mb-2 text-sm font-semibold">Revenue Over Time</div>
+      <div className="mb-2 text-sm font-semibold">Revenue Over Time · {dateRange === "12m" ? "Last 12 months" : dateRange === "30d" ? "Last 30 days" : "Last 7 days"}</div>
       <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data.revenueMonthly}>

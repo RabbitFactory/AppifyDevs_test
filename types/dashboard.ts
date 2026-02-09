@@ -1,5 +1,5 @@
 export type DateRange = "7d" | "30d" | "12m";
-export type UserType = "All" | "New" | "Returning";
+export type UserType = "All" | "Free" | "Premium" | "Enterprise";
 
 export type Kpi = {
   id: "revenue" | "users" | "orders" | "conversion";

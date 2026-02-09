@@ -33,8 +33,9 @@ const ordersMonthly: MonthlyDatum[] = [
 ];
 
 const userDistribution: DistributionDatum[] = [
-  { name: "New", value: 45 },
-  { name: "Returning", value: 55 },
+  { name: "Free", value: 60 },
+  { name: "Premium", value: 30 },
+  { name: "Enterprise", value: 10 },
 ];
 
 const kpis: Kpi[] = [

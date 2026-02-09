@@ -11,8 +11,9 @@ const dateOptions: { label: string; value: DateRange }[] = [
 
 const userOptions: { label: string; value: UserType }[] = [
   { label: "All users", value: "All" },
-  { label: "New", value: "New" },
-  { label: "Returning", value: "Returning" },
+  { label: "Free users", value: "Free" },
+  { label: "Premium users", value: "Premium" },
+  { label: "Enterprise users", value: "Enterprise" },
 ];
 
 export default function Filters() {

@@ -26,19 +26,21 @@ export default function Header() {
               <path d="M7 10l5 5 5-5z" />
             </svg>
           </button>
-          {open && (
-            <div className="absolute right-0 z-10 mt-2 w-40 rounded border border-gray-200 bg-white p-1 text-sm shadow dark:bg-neutral-900 dark:border-neutral-800">
-              <button className="flex w-full items-center justify-between rounded px-2 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800">
-                Profile
-              </button>
-              <button className="flex w-full items-center justify-between rounded px-2 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800">
-                Settings
-              </button>
-              <button className="flex w-full items-center justify-between rounded px-2 py-2 hover:bg-red-50 text-red-600">
-                Logout
-              </button>
-            </div>
-          )}
+          <div
+            className={`absolute right-0 z-10 mt-2 w-40 rounded border border-gray-200 bg-white p-1 text-sm shadow transition-all duration-150 transform dark:bg-neutral-900 dark:border-neutral-800 ${
+              open ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
+            }`}
+          >
+            <button className="flex w-full items-center justify-between rounded px-2 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800">
+              Profile
+            </button>
+            <button className="flex w-full items-center justify-between rounded px-2 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800">
+              Settings
+            </button>
+            <button className="flex w-full items-center justify-between rounded px-2 py-2 hover:bg-red-50 text-red-600">
+              Logout
+            </button>
+          </div>
         </div>
       </div>
     </header>

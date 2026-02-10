@@ -1,37 +1,17 @@
-Frontend Analytics Dashboard
+Live link - https://appify-devs-test.vercel.app/
 
-## How to Run
+Setup Instructions - 
+To set up this project, first clone the project to your local machine, then install the dependencies (npm install), then run the command (npm run dev) then visit (http://localhost:3000/) to see the result.
 
-Install dependencies and start the dev server:
+Tech stack used - 
+Next.js
+Typescript
+Tailwind CSS
+Recharts
+Zustand
 
-```bash
-npm run dev
-```
+Architecture decisions - 
+I kept the charts components in separate files to make them individually reuseable. Which also means each chart components can be debugged separately. Navbar and Sidebar and the Main dashboard is separated in the layout to avoid unnecessary re-renders. Mock data is kept separate from UI logic so it can be modified without messing with the UI. Global state is used for filters and dashboard data.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Tech Stack
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
-- Recharts
-- Zustand
-
-## Project Structure
-- app/: layout and page composition
-- components/: UI components (sidebar, header, filters, KPI cards, charts)
-- store/: Zustand global state
-- lib/: data fetching helpers
-- types/: TypeScript types
-- public/: static assets and mock.json
-
-## Assumptions
-- No authentication, no backend
-- Data comes from public/mock.json, filtered client-side
-- Loading is simulated with setTimeout
-- Error state is simulated randomly
-
-## Deploy to Vercel
-- Push this repo to GitHub
-- Import to Vercel and deploy
-- No environment variables required
+Assumptions made - 
+All data was mock so didn't need any backend. Only one type of user was assumed. No authentication is implemented assuming it wasn't mandatory.
